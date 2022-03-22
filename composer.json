@@ -1,12 +1,6 @@
 {
-    "name": "laravelcollective/remote",
-    "description": "Remote SSH access for The Laravel Framework.",
+    "name": "rocketeers-app/ssh",
     "license": "MIT",
-    "homepage": "http://laravelcollective.com",
-    "support": {
-        "issues": "https://github.com/LaravelCollective/remote/issues",
-        "source": "https://github.com/LaravelCollective/remote"
-    },
     "authors": [
         {
             "name": "Taylor Otwell",
@@ -15,10 +9,14 @@
         {
             "name": "Tom Shafer",
             "email": "tj@tjshafer.com"
+        },
+        {
+            "name": "Mark van Eijk",
+            "email": "mark@vaneijk.co"
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "illuminate/support": "^6.0|^7.0|^8.0",
         "illuminate/filesystem": "^6.0|^7.0|^8.0",
         "phpseclib/phpseclib": "^3.0"
@@ -29,21 +27,18 @@
         "phpunit/phpunit": "~5.5"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "6.x-dev"
-        },
         "laravel": {
             "providers": [
-                "Collective\\Remote\\RemoteServiceProvider"
+                "Rocketeers\\SSH\\RemoteServiceProvider"
             ],
             "aliases": {
-                "SSH": "Collective\\Remote\\RemoteFacade"
+                "SSH": "Rocketeers\\SSH\\RemoteFacade"
             }
         }
     },
     "autoload": {
         "psr-4": {
-            "Collective\\Remote\\": "src/"
+            "Rocketeers\\Remote\\": "src/"
         }
     },
     "minimum-stability": "dev"
