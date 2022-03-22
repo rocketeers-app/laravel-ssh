@@ -63,12 +63,16 @@ class SecLibGateway implements GatewayInterface
      * @param \Illuminate\Filesystem\Filesystem $files
      * @param                                   $timeout
      */
-    public function __construct($host, array $auth, Filesystem $files, $timeout)
+    public function __construct($host, array $auth, Filesystem $files, $timeout, $keepalive = null)
     {
         $this->auth = $auth;
         $this->files = $files;
         $this->setTimeout($timeout);
         $this->setHostAndPort($host);
+
+        if(!is_null($keepalive)) {
+            $this->setKeepAlive($keepalive);
+        }
     }
 
     /**
@@ -261,6 +265,24 @@ class SecLibGateway implements GatewayInterface
 
         if ($this->connection) {
             $this->connection->setTimeout($this->timeout);
+        }
+    }
+
+    /**
+     * Set keepalive.
+     *
+     * $ssh->exec('ping 127.0.0.1'); on a Linux host will never return
+     * and will run indefinitely. setTimeout() makes it so it'll timeout.
+     * Setting $timeout to false or 0 will mean there is no timeout.
+     *
+     * @param int $keepalive
+     */
+    public function setKeepAlive($keepalive)
+    {
+        $this->keepalive = (int) $keepalive;
+
+        if ($this->connection) {
+            $this->connection->setKeepAlive($this->keepalive);
         }
     }
 
