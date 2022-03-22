@@ -115,8 +115,8 @@ interface GatewayInterface
     /**
      * Set keep alive
      *
-     * @param $keepalive
+     * @param $keepAlive
      * @return mixed
      */
-    public function setKeepAlive($keepalive);
+    public function setKeepAlive($keepAlive);
 }

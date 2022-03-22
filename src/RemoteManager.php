@@ -106,9 +106,7 @@ class RemoteManager
         $timeout = isset($config['timeout']) ? $config['timeout'] : 10;
 
         $this->setOutput($connection = new Connection(
-
-            $name, $config['host'], $config['username'], $this->getAuth($config), null, $timeout
-
+            $name, $config['host'], $config['username'], $this->getAuth($config), null, $timeout, $config['keep_alive'] ?? null,
         ));
 
         return $connection;

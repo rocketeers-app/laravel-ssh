@@ -61,12 +61,12 @@ class Connection implements ConnectionInterface
      * @param \Rocketeers\SSH\GatewayInterface $gateway
      * @param int                                 $timeout
      */
-    public function __construct($name, $host, $username, array $auth, GatewayInterface $gateway = null, $timeout = 10, $keepalive = null)
+    public function __construct($name, $host, $username, array $auth, GatewayInterface $gateway = null, $timeout = 10, $keepAlive = null)
     {
         $this->name = $name;
         $this->host = $host;
         $this->username = $username;
-        $this->gateway = $gateway ?: new SecLibGateway($host, $auth, new Filesystem(), $timeout, $keepalive);
+        $this->gateway = $gateway ?: new SecLibGateway($host, $auth, new Filesystem(), $timeout, $keepAlive);
     }
 
     /**
@@ -108,7 +108,7 @@ class Connection implements ConnectionInterface
      * @param int|null $timeout
      * @return void
      */
-    public function run($commands, ?callable $callback = null, ?int $timeout = null, ?int $keepalive = null)
+    public function run($commands, ?callable $callback = null, ?int $timeout = null, ?int $keepAlive = null)
     {
         // First, we will initialize the SSH gateway, and then format the commands so
         // they can be run. Once we have the commands formatted and the server is
@@ -119,8 +119,8 @@ class Connection implements ConnectionInterface
             $gateway->setTimeout($timeout);
         }
 
-        if ($keepalive != null) {
-            $gateway->setKeepAlive($keepalive);
+        if ($keepAlive != null) {
+            $gateway->setKeepAlive($keepAlive);
         }
 
         $callback = $this->getCallback($callback);
@@ -321,9 +321,9 @@ class Connection implements ConnectionInterface
         return $this;
     }
 
-    public function setKeepAlive($keepalive) {
+    public function setKeepAlive($keepAlive) {
 
-        $this->getGateway()->setKeepAlive($keepalive);
+        $this->getGateway()->setKeepAlive($keepAlive);
 
         return $this;
     }
