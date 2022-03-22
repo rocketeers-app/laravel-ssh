@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocketeers\Remote;
+namespace Rocketeers\SSH;
 
 use Closure;
 

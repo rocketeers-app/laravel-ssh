@@ -1,10 +1,10 @@
 <?php
 
-namespace Rocketeers\Remote;
+namespace Rocketeers\SSH;
 
-use Rocketeers\Remote\Console\TailCommand;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
+use Rocketeers\SSH\Console\TailCommand;
 
 class RemoteServiceProvider extends ServiceProvider
 {

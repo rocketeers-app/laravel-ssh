@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocketeers\Remote\Console;
+namespace Rocketeers\SSH\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -125,7 +125,7 @@ class TailCommand extends Command
      *
      * @param string $connection
      *
-     * @return \Rocketeers\Remote\Connection
+     * @return \Rocketeers\SSH\Connection
      */
     protected function getRemote($connection)
     {

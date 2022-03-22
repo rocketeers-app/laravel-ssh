@@ -1,12 +1,12 @@
 <?php
 
-namespace Rocketeers\Remote;
+namespace Rocketeers\SSH;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Rocketeers\Remote\RemoteManager
- * @see \Rocketeers\Remote\Connection
+ * @see \Rocketeers\SSH\RemoteManager
+ * @see \Rocketeers\SSH\Connection
  */
 class RemoteFacade extends Facade
 {

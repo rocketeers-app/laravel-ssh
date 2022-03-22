@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocketeers\Remote;
+namespace Rocketeers\SSH;
 
 use Illuminate\Contracts\Container\Container;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -30,7 +30,7 @@ class RemoteManager
      *
      * @param string|array|mixed $name
      *
-     * @return \Rocketeers\Remote\ConnectionInterface
+     * @return \Rocketeers\SSH\ConnectionInterface
      */
     public function into($name)
     {
@@ -46,7 +46,7 @@ class RemoteManager
      *
      * @param string|array $name
      *
-     * @return \Rocketeers\Remote\ConnectionInterface
+     * @return \Rocketeers\SSH\ConnectionInterface
      */
     public function connection($name = null)
     {
@@ -62,7 +62,7 @@ class RemoteManager
      *
      * @param array $config
      *
-     * @return \Rocketeers\Remote\Connection
+     * @return \Rocketeers\SSH\Connection
      */
     public function connect($config)
     {
@@ -74,7 +74,7 @@ class RemoteManager
      *
      * @param array $names
      *
-     * @return \Rocketeers\Remote\MultiConnection
+     * @return \Rocketeers\SSH\MultiConnection
      */
     public function multiple(array $names)
     {
@@ -86,7 +86,7 @@ class RemoteManager
      *
      * @param string $name
      *
-     * @return \Rocketeers\Remote\Connection
+     * @return \Rocketeers\SSH\Connection
      */
     public function resolve($name)
     {
@@ -99,7 +99,7 @@ class RemoteManager
      * @param string $name
      * @param array  $config
      *
-     * @return \Rocketeers\Remote\Connection
+     * @return \Rocketeers\SSH\Connection
      */
     protected function makeConnection($name, array $config)
     {
@@ -117,7 +117,7 @@ class RemoteManager
     /**
      * Set the output implementation on the connection.
      *
-     * @param \Rocketeers\Remote\Connection $connection
+     * @param \Rocketeers\SSH\Connection $connection
      *
      * @return void
      */
@@ -187,7 +187,7 @@ class RemoteManager
      *
      * @param string $name
      *
-     * @return \Rocketeers\Remote\ConnectionInterface
+     * @return \Rocketeers\SSH\ConnectionInterface
      */
     public function group($name)
     {
