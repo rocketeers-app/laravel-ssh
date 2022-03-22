@@ -1,6 +1,6 @@
 <?php
 
-namespace Collective\Remote\Console;
+namespace Rocketeers\Remote\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -14,9 +14,9 @@ class TailCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'tail 
-        {connection? : The remote connection name} 
-        {--path= : The fully qualified path to the log file.} 
+    protected $signature = 'tail
+        {connection? : The remote connection name}
+        {--path= : The fully qualified path to the log file.}
         {--lines=20 : The number of lines to tail.}';
 
     /**
@@ -125,7 +125,7 @@ class TailCommand extends Command
      *
      * @param string $connection
      *
-     * @return \Collective\Remote\Connection
+     * @return \Rocketeers\Remote\Connection
      */
     protected function getRemote($connection)
     {

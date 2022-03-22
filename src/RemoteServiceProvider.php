@@ -1,8 +1,8 @@
 <?php
 
-namespace Collective\Remote;
+namespace Rocketeers\Remote;
 
-use Collective\Remote\Console\TailCommand;
+use Rocketeers\Remote\Console\TailCommand;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 

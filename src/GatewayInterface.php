@@ -1,6 +1,6 @@
 <?php
 
-namespace Collective\Remote;
+namespace Rocketeers\Remote;
 
 interface GatewayInterface
 {

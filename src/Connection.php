@@ -1,6 +1,6 @@
 <?php
 
-namespace Collective\Remote;
+namespace Rocketeers\Remote;
 
 use Closure;
 use Illuminate\Filesystem\Filesystem;
@@ -12,7 +12,7 @@ class Connection implements ConnectionInterface
     /**
      * The SSH gateway implementation.
      *
-     * @var \Collective\Remote\GatewayInterface
+     * @var \Rocketeers\Remote\GatewayInterface
      */
     protected $gateway;
 
@@ -58,7 +58,7 @@ class Connection implements ConnectionInterface
      * @param string                              $host
      * @param string                              $username
      * @param array                               $auth
-     * @param \Collective\Remote\GatewayInterface $gateway
+     * @param \Rocketeers\Remote\GatewayInterface $gateway
      * @param int                                 $timeout
      */
     public function __construct($name, $host, $username, array $auth, GatewayInterface $gateway = null, $timeout = 10)
@@ -140,7 +140,7 @@ class Connection implements ConnectionInterface
      *
      * @throws \RuntimeException
      *
-     * @return \Collective\Remote\GatewayInterface
+     * @return \Rocketeers\Remote\GatewayInterface
      */
     public function getGateway()
     {

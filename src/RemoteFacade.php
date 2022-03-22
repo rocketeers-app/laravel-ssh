@@ -1,12 +1,12 @@
 <?php
 
-namespace Collective\Remote;
+namespace Rocketeers\Remote;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Collective\Remote\RemoteManager
- * @see \Collective\Remote\Connection
+ * @see \Rocketeers\Remote\RemoteManager
+ * @see \Rocketeers\Remote\Connection
  */
 class RemoteFacade extends Facade
 {

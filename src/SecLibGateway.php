@@ -1,6 +1,6 @@
 <?php
 
-namespace Collective\Remote;
+namespace Rocketeers\Remote;
 
 use phpseclib\Net\SFTP;
 use phpseclib\Net\SSH2;

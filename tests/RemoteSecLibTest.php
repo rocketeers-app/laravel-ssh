@@ -86,7 +86,7 @@ class RemoteSecLibGatewayTest extends PHPUnit_Framework_TestCase
     public function testKeyTextCanBeSetManually()
     {
         $files = m::mock('Illuminate\Filesystem\Filesystem');
-        $gateway = m::mock('Collective\Remote\SecLibGateway[!setTimeout]', [
+        $gateway = m::mock('Rocketeers\Remote\SecLibGateway[!setTimeout]', [
                 '127.0.0.1:22',
                 ['username' => 'taylor', 'keytext' => 'keystuff'],
                 $files,
@@ -104,7 +104,7 @@ class RemoteSecLibGatewayTest extends PHPUnit_Framework_TestCase
     {
         $files = m::mock('Illuminate\Filesystem\Filesystem');
         $files->shouldReceive('get')->with('keypath')->andReturn('keystuff');
-        $gateway = m::mock('Collective\Remote\SecLibGateway[!setTimeout]', [
+        $gateway = m::mock('Rocketeers\Remote\SecLibGateway[!setTimeout]', [
                 $host,
                 ['username' => 'taylor', 'key' => 'keypath', 'keyphrase' => 'keyphrase'],
                 $files,
