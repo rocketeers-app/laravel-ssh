@@ -283,7 +283,7 @@ class SecLibGateway implements GatewayInterface
      */
     public function run($command, $callback)
     {
-        $this->getConnection()->exec($command);
+        $this->getConnection()->exec($command, $callback);
     }
 
     /**
