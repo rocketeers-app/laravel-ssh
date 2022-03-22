@@ -381,7 +381,7 @@ class SecLibGateway implements GatewayInterface
      */
     public function nextLine()
     {
-        $value = $this->getConnection()->_get_channel_packet(SSH2::CHANNEL_EXEC);
+        $value = $this->getConnection()->get_channel_packet(SSH2::CHANNEL_EXEC);
 
         return $value === true ? null : $value;
     }
