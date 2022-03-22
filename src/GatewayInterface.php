@@ -24,10 +24,11 @@ interface GatewayInterface
      * Run a command against the server (non-blocking).
      *
      * @param string $command
+     * @param callable $callback
      *
      * @return void
      */
-    public function run($command);
+    public function run($command, $callback);
 
     /**
      * Download the contents of a remote file.

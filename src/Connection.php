@@ -108,7 +108,7 @@ class Connection implements ConnectionInterface
      * @param int|null $timeout
      * @return void
      */
-    public function run($commands, Closure $callback = null, int $timeout = null)
+    public function run($commands, callable $callback = null, int $timeout = null)
     {
         // First, we will initialize the SSH gateway, and then format the commands so
         // they can be run. Once we have the commands formatted and the server is
@@ -121,18 +121,7 @@ class Connection implements ConnectionInterface
 
         $callback = $this->getCallback($callback);
 
-        $gateway->run($this->formatCommands($commands));
-
-        // After running the commands against the server, we will continue to ask for
-        // the next line of output that is available, and write it them out using
-        // our callback. Once we hit the end of output, we'll bail out of here.
-        while (true) {
-            if (is_null($line = $gateway->nextLine())) {
-                break;
-            }
-
-            call_user_func($callback, $line, $this);
-        }
+        $gateway->run($this->formatCommands($commands), $callback);
     }
 
     /**

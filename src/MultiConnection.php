@@ -61,7 +61,7 @@ class MultiConnection implements ConnectionInterface
      *
      * @return void
      */
-    public function run($commands, Closure $callback = null)
+    public function run($commands, callable $callback = null)
     {
         foreach ($this->connections as $connection) {
             $connection->run($commands, $callback);

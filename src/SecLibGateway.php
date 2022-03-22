@@ -281,7 +281,7 @@ class SecLibGateway implements GatewayInterface
      *
      * @return void
      */
-    public function run($command)
+    public function run($command, $callback)
     {
         $this->getConnection()->exec($command);
     }
@@ -372,18 +372,6 @@ class SecLibGateway implements GatewayInterface
     public function delete($remote)
     {
         return $this->getConnection()->delete($remote);
-    }
-
-    /**
-     * Get the next line of output from the server.
-     *
-     * @return string|null
-     */
-    public function nextLine()
-    {
-        $value = $this->getConnection()->get_channel_packet(SSH2::CHANNEL_EXEC);
-
-        return $value === true ? null : $value;
     }
 
     /**
