@@ -5,6 +5,7 @@ namespace Rocketeers\SSH;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Crypt\RSA;
 use phpseclib3\Net\SFTP;
 use phpseclib3\Net\SSH2;
@@ -192,9 +193,7 @@ class SecLibGateway implements GatewayInterface
      */
     protected function loadRsaKey(array $auth)
     {
-        with($key = $this->getKey($auth))->loadKey($this->readRsaKey($auth));
-
-        return $key;
+        return PublicKeyLoader::load($this->readRsaKey($auth), Arr::get($auth, 'keyphrase'));
     }
 
     /**
