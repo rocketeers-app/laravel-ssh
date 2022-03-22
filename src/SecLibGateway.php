@@ -2,13 +2,13 @@
 
 namespace Rocketeers\SSH;
 
-use phpseclib\Net\SFTP;
-use phpseclib\Net\SSH2;
-use phpseclib\Crypt\RSA;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use phpseclib\System\SSH\Agent;
-use Illuminate\Filesystem\Filesystem;
+use phpseclib3\Crypt\RSA;
+use phpseclib3\Net\SFTP;
+use phpseclib3\Net\SSH2;
+use phpseclib3\System\SSH\Agent;
 
 class SecLibGateway implements GatewayInterface
 {
@@ -50,7 +50,7 @@ class SecLibGateway implements GatewayInterface
     /**
      * The SecLib connection instance.
      *
-     * @var \phpseclib\Net\SFTP
+     * @var \phpseclib3\Net\SFTP
      */
     protected $connection;
 
@@ -109,7 +109,7 @@ class SecLibGateway implements GatewayInterface
     /**
      * Get the underlying SFTP connection.
      *
-     * @return \phpseclib\Net\SFTP
+     * @return \phpseclib3\Net\SFTP
      */
     public function getConnection()
     {
@@ -164,7 +164,7 @@ class SecLibGateway implements GatewayInterface
     /**
      * Get a new SSH Agent instance.
      *
-     * @return \phpseclib\System\SSH\Agent
+     * @return \phpseclib3\System\SSH\Agent
      */
     public function getAgent()
     {
@@ -214,7 +214,7 @@ class SecLibGateway implements GatewayInterface
     /**
      * Get a new RSA key instance.
      *
-     * @return \phpseclib\Crypt\RSA
+     * @return \phpseclib3\Crypt\RSA
      */
     public function getNewKey()
     {
