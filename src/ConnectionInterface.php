@@ -34,7 +34,7 @@ interface ConnectionInterface
      *
      * @return void
      */
-    public function run($commands, callable $callback = null);
+    public function run($commands, ?callable $callback = null, ?int $timeout = null);
 
     /**
      * Download the contents of a remote file.

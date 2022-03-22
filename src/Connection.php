@@ -108,7 +108,7 @@ class Connection implements ConnectionInterface
      * @param int|null $timeout
      * @return void
      */
-    public function run($commands, callable $callback = null, int $timeout = null)
+    public function run($commands, ?callable $callback = null, ?int $timeout = null)
     {
         // First, we will initialize the SSH gateway, and then format the commands so
         // they can be run. Once we have the commands formatted and the server is
