@@ -6,6 +6,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use phpseclib3\Crypt\RSA;
+use phpseclib3\Crypt\RSA\PrivateKey;
 use phpseclib3\Net\SFTP;
 use phpseclib3\Net\SSH2;
 use phpseclib3\System\SSH\Agent;
@@ -206,7 +207,7 @@ class SecLibGateway implements GatewayInterface
      */
     protected function getKey(array $auth)
     {
-        with($key = $this->getNewKey())->setPassword(Arr::get($auth, 'keyphrase'));
+        with($key = $this->getNewKey())->withPassword(Arr::get($auth, 'keyphrase'));
 
         return $key;
     }
@@ -214,11 +215,11 @@ class SecLibGateway implements GatewayInterface
     /**
      * Get a new RSA key instance.
      *
-     * @return \phpseclib3\Crypt\RSA
+     * @return \phpseclib3\Crypt\RSA\PrivateKey
      */
     public function getNewKey()
     {
-        return new RSA();
+        return new PrivateKey();
     }
 
     /**
