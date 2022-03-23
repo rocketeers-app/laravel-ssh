@@ -1,3 +1,3 @@
 # Laravel SSH
 
-Based on LaravelCollective/remote and upgraded PHPSecLib to version 3.x.
+Laravel package based on LaravelCollective/remote, but upgraded PHPSecLib to version 3.x.
